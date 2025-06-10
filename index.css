@@ -1,0 +1,433 @@
+/* ===== COLOUR SYSTEM ===== */
+:root{
+  --clr-main-light:#faeea7;
+  --clr-main-blue:#87b1cb;
+  --clr-neutral-light:#d6d6d6;
+  --clr-neutral-dark:#4a4a4a;
+  --clr-brand-green:#00963f;
+  --clr-accent:#ff4e59;
+  --clr-white:#ffffff;
+}
+
+/* ------------------------------------------------------------------ */
+/* 1.  Stronger colour for section titles & subtitles (not hero) */
+/* ------------------------------------------------------------------ */
+.why-title,
+.label-small,
+.areas-heading,
+.faq-heading,
+.faq-intro {
+  color:black !important;                 /* darker / bolder */
+}
+
+/* 1. Larger base font for elderly accessibility (20px) */
+html { font-size:125%; scroll-behavior:smooth; }
+body { font-family:"Helvetica Neue",Arial,sans-serif; color:var(--clr-neutral-dark); line-height:1.6; }
+/* 2. Skip link */
+.skip-link {
+  position:absolute; left:-999px; background:#000; color:#fff; padding:.5rem; z-index:2000;
+}
+.skip-link:focus { left:.5rem; top:.5rem; }
+/* 3. Focus-visible */
+:focus-visible { outline:3px solid var(--clr-accent); outline-offset:2px; }
+
+
+/* ===== GLOBAL ===== */
+html{scroll-behavior:smooth;}
+body{font-family:"Helvetica Neue",Arial,sans-serif;color:var(--clr-neutral-dark);line-height:1.6;}
+a,button,input,select,textarea{outline-offset:2px;}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{outline:3px solid var(--clr-accent);}
+.text-brand-green{color:var(--clr-brand-green);}
+.bg-neutral-dark{background:var(--clr-neutral-dark);}
+
+/* BUTTONS */
+.btn-accent{background:var(--clr-accent);color:var(--clr-white);border:none;}
+.btn-accent:hover,.btn-accent:focus{background:#e64351;color:var(--clr-white);}
+
+/* NAVBAR */
+.navbar-nav .nav-link{font-weight:500;color:var(--clr-neutral-dark);margin-inline:.75rem;}
+.navbar-nav .nav-link:hover,.navbar-nav .nav-link:focus{color:var(--clr-main-blue);}
+.phone-number a:hover,.phone-number a:focus{text-decoration:underline;}
+.vr{opacity:.25;}
+
+/* HERO */
+.hero{min-height:80vh;background:url(hero.jpg) center/cover no-repeat;position:relative;display:flex;align-items:center;}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);}
+.hero-copy{position:relative;max-width:46rem;color:var(--clr-white);padding-block:4rem;}
+.hero-copy h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.15;}
+.highlight-yellow{color:var(--clr-main-light);}
+.hero-form{max-width:40rem;}
+.hero-form .form-control{border:none;border-radius:9999px 0 0 9999px;padding-inline:1.4rem;}
+.hero-form .btn{border-radius:0 9999px 9999px 0;padding-inline:1.5rem;}
+
+/* ========= NEW WHY SECTION ========= */
+.why-section{overflow:hidden;background:#fff;position:relative;}
+/* soft abstract blob */
+.why-shape{
+  position:absolute;top:0;right:50%;width:120%;height:120%;
+  background:var(--clr-main-light);
+  opacity:.15;
+  transform:translate(40%,-20%) rotate(8deg);
+  border-radius:50%;
+}
+/* dotted pattern */
+.why-dots{
+  position:absolute;top:-40px;right:-120px;width:360px;height:360px;
+  background-image:radial-gradient(var(--clr-neutral-light) 20%,transparent 20%);
+  background-size:20px 20px;opacity:.4;
+}
+
+.label-small{
+  letter-spacing:.08em;
+  font-size:.75rem;
+  color:var(--clr-neutral-dark);
+}
+.why-title{
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:700;
+  color:var(--clr-neutral-dark);
+}
+.why-text{font-size:1.1rem;}
+
+.why-card{
+  position:relative;z-index:1;border:1px solid rgba(0,0,0,.05);
+}
+.why-list li{
+  padding-block:.9rem;
+  border-bottom:1px solid var(--clr-neutral-light);
+  font-size:1.05rem;
+  line-height:1.4;
+  display:flex;gap:.75rem;align-items:flex-start;
+}
+.why-list li:last-child{border-bottom:none;}
+.check-icon{
+  flex:0 0 1.3rem;height:1.3rem;
+  border:2px solid var(--clr-main-blue);
+  border-radius:50%;
+  position:relative;top:2px;
+}
+.check-icon::after{
+  content:"";position:absolute;inset:0;
+  width:.55rem;height:.3rem;margin:.2rem auto 0;
+  border-bottom:2px solid var(--clr-main-blue);
+  border-left:2px solid var(--clr-main-blue);
+  transform:rotate(-45deg);
+}
+
+/* ----------------------------------------------------- *
+   “EXPLORE” CARD REFINEMENTS  (new/updated styles)
+ * ----------------------------------------------------- */
+
+.info-card{
+  background:var(--clr-white);
+  border-radius:1.25rem;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.info-card img{
+  aspect-ratio:1/1;
+  object-fit:cover;
+}
+.info-card-body{
+  position:relative;
+  padding:1.5rem 1.75rem 3.5rem;  /* extra bottom room for CTA */
+  flex-grow:1;
+  background:#f8f8f8;
+}
+.info-card-title{
+  font-weight:600;
+  font-size:1.1rem;
+  color:var(--clr-neutral-dark);
+  margin-bottom:.35rem;
+}
+.info-card-text{font-size:1rem;margin-bottom:.4rem;}
+.role{color:var(--clr-neutral-dark);font-size:.9rem;display:block}
+
+/* ===================================================== *
+   CARD CTA – text + circular arrow on the same row
+ * ===================================================== */
+
+.card-cta-link{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+
+  position:absolute;       /* sits at bottom of card panel */
+  left:1.75rem;
+  right:1.75rem;
+  bottom:1.25rem;
+
+  text-decoration:none;
+}
+
+.cta-text{
+  font-weight:600;         /* bold */
+  font-size:1.05rem;       /* larger for readability */
+  color:var(--clr-neutral-dark);
+}
+
+/* circular arrow */
+.cta-arrow{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:var(--clr-accent);           /* ★ always red fill */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:1.25rem;
+  color:var(--clr-white);
+
+  transition:transform .25s, filter .25s;
+}
+.cta-arrow::before{content:"\2192";}      /* → */
+
+/* hover / focus state – lift & slight shade */
+.card-cta-link:hover .cta-arrow,
+.card-cta-link:focus .cta-arrow{
+  transform:translateY(-2px);
+  filter:brightness(0.93);
+}
+
+/* maintain underline-free but keyboard focus-visible */
+.card-cta-link:focus .cta-text{text-decoration:underline;}
+
+
+
+/* ===================================================== *
+   AREAS WE SERVE
+ * ===================================================== */
+
+.areas-heading{
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:700;
+  line-height:1.2;
+  color:var(--clr-neutral-dark);
+}
+
+.areas-subtitle{
+  font-size:1.15rem;
+  color:var(--clr-neutral-dark);
+}
+
+.area-pill{
+  display:inline-block;
+  padding:.4rem 1.1rem;
+  border-radius:1.5rem;
+  background:var(--clr-main-light);     /* soft yellow pill */
+  color:var(--clr-neutral-dark);
+  font-weight:600;
+  text-decoration:none;
+  transition:background .2s, transform .2s;
+}
+.area-pill:hover,
+.area-pill:focus{
+  background:var(--clr-accent);         /* brand red on hover */
+  color:var(--clr-white);
+  transform:translateY(-2px);
+}
+
+/* TESTIMONIAL SECTION */
+.testimonial-heading{font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.2;color:var(--clr-neutral-dark);max-width:34rem;}
+.testimonial-img{width:100%;border-radius:1rem;object-fit:cover;}
+.big-quote{font-size:7rem;line-height:0;color:var(--clr-neutral-dark);display:inline-block;margin-bottom:1rem;}
+.testimonial-text{font-size:1.15rem;color:var(--clr-neutral-dark);margin-bottom:1.75rem;}
+.testimonial-author{font-weight:600;color:var(--clr-brand-green);}
+.carousel-nav{font-size:2rem;border:none;background:none;color:var(--clr-accent);transition:transform .2s;}
+.carousel-nav:hover,.carousel-nav:focus{transform:translateY(-2px);}
+.counter{color:var(--clr-neutral-dark);}
+.nav-cluster{display:flex;justify-content:flex-start;align-items:center;gap:1.5rem;margin-top:.5rem;}
+@media (max-width:991.98px){
+  .testimonial-text{font-size:1rem;}
+  .big-quote{font-size:4rem;}
+}
+
+/* ========== FAQ SECTION (only shape edit below) ========== */
+.faq-section{position:relative;overflow:hidden;background:#fff;}
+
+.faq-shape{
+  position:absolute;
+  top:-15%;                 /* slightly up so curve not too low */
+  left:-10%;                /* start further left */
+  width:120%;               /* stretch width so it reaches right edge */
+  height:140%;
+  background:var(--clr-main-light);
+  opacity:.15;
+  transform:rotate(-6deg);
+  border-radius:50%;
+}
+
+/* dotted overlay unchanged */
+.faq-dots{
+  position:absolute;right:-120px;top:-60px;width:360px;height:360px;
+  background-image:radial-gradient(var(--clr-neutral-light) 22%,transparent 22%);
+  background-size:22px 22px;opacity:.4;
+}
+
+/* headings & intro (darker now via --clr-heading) */
+.faq-heading{
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:700;
+  line-height:1.2;
+}
+.faq-intro{font-size:1.15rem;color:var(--clr-heading);}
+
+/* accordion cards (unchanged) */
+.faq-card .accordion-button{
+  background:#f8f8f8;border:none;font-weight:600;font-size:1rem;
+  padding:1.1rem 1.4rem;border-radius:.75rem;
+}
+.faq-card .accordion-button:not(.collapsed){
+  background:var(--clr-main-light);color:var(--clr-heading);
+  box-shadow:inset 0 0 0 1px var(--clr-main-light);
+}
+.faq-card .accordion-body{padding:1rem 1.4rem 1.25rem;font-size:1rem;}
+.faq-card{border:none;}
+.faq-card+.faq-card{margin-top:1rem;}
+
+@media (max-width:767.98px){
+  .faq-intro{font-size:1rem;margin-top:1.25rem;}
+  .faq-shape{left:-30%;width:160%;}     /* ensure full bleed on mobile */
+}
+
+/* ===== FOOTER ===== */
+footer a{
+  color:var(--clr-main-light);
+  text-decoration:none;
+}
+footer a:hover{text-decoration:underline;}
+
+
+/* ===================================================== *
+   MOBILE: place quote mark under the image
+ * ===================================================== */
+@media (max-width:575.98px){   /* phones */
+  .big-quote{
+    position:static;          /* stop absolute overlap */
+    display:block;
+    margin:1rem 0 0;          /* space above quote */
+    line-height:1;            /* tighten gap */
+  }
+}
+
+/* ===================================================== *
+   HERO – MOBILE LAYOUT & TYPE SIZE
+ * ===================================================== */
+@media (max-width:575.98px){
+
+  /* 1 ▸ stack phone + button */
+  .hero-form .input-group{
+    flex-direction:column;             /* vertical instead of inline */
+    gap:.75rem;
+  }
+  .hero-form .form-control{
+    border-radius:9999px !important;   /* pill all round */
+    width:100%;
+  }
+  .hero-form .btn{
+    width:100%;
+    border-radius:9999px !important;
+  }
+
+  /* 2 ▸ slightly smaller headline & body copy */
+  .hero-copy h1{
+    font-size:1.85rem;                 /* was ~2.2–3.6 via clamp */
+    line-height:1.25;
+  }
+  .hero-copy p{
+    font-size:1rem;                    /* down from 1.15rem lead */
+  }
+}
+/* ===================================================== *
+   HERO – MOBILE PLACEHOLDER SIZE & CENTERED HELP TEXT
+ * ===================================================== */
+@media (max-width:575.98px){
+
+  /* smaller placeholder so full line fits */
+  .hero-form .form-control::placeholder{
+    font-size:.85rem;          /* was 1rem; tweak until it shows fully */
+  }
+
+  /* centre-align help text under button */
+  .hero-form .form-text{
+    text-align:center;
+    display:block;
+    margin-top:.35rem;
+  }
+}
+
+/* ================================================================== *
+   TABLET / SMALL-DESKTOP FIXES  (≥ 576px and < 992px)
+ * ================================================================== */
+@media (min-width:576px) and (max-width:991.98px){
+
+
+
+  /* ---------- 2. TESTIMONIALS ------------------------------------ */
+  /* slightly smaller quote mark */
+  .big-quote{
+    font-size:5.5rem;
+  }
+
+  /* centre nav cluster under text block */
+  .nav-cluster{
+    justify-content:center;
+    margin-top:1rem;
+  }
+
+  /* image and text stack nicely */
+  #testimonials .row.g-lg-5{
+    row-gap:2rem;
+  }
+}
+
+
+/* ============================================================= *
+   HIDE CTA ARROW ON TABLET (576px–991.98px)
+ * ============================================================= */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .cta-arrow {
+    display: none !important;
+  }
+}
+
+/* =================================================================== *
+   NAVBAR – make it taller and sticky at the top
+ * =================================================================== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1020;    /* above other content */
+  background: var(--clr-white);
+}
+
+/* Increase vertical padding for a roomier feel */
+header .navbar {
+  padding-block: 1rem;   /* 1rem top & bottom */
+}
+
+/* Slightly larger brand logo text */
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+/* Bigger tappable areas for nav links */
+.navbar-nav .nav-link {
+  padding: .75rem 1.25rem;
+  font-size: 1.05rem;
+}
+
+/* Upsize the main CTA button in the navbar */
+header .btn-accent {
+  padding-block: .65rem;
+  padding-inline: 1.5rem;
+  font-size: 1rem;
+}
