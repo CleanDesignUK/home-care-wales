@@ -519,10 +519,6 @@ header .navbar { padding-block: 1rem; }
   }
 }
 
-/* finally, just in case you ever see any overflow again… */
-html, body {
-  overflow-x: hidden;
-}
 
 @media (max-width: 575.98px) {
   /* 1) Make sure the container stays a flex row, and space items out */
