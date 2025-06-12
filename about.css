@@ -32,6 +32,17 @@ a, button, input, select, textarea {
   outline: 3px solid var(--clr-accent);
   outline-offset: 2px;
 }
+/* ===== GLOBAL ===== */
+html{scroll-behavior:smooth;}
+body{font-family:"Helvetica Neue",Arial,sans-serif;color:var(--clr-neutral-dark);line-height:1.6;}
+a,button,input,select,textarea{outline-offset:2px;}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{outline:3px solid var(--clr-accent);}
+.text-brand-green{color:var(--clr-brand-green);}
+.bg-neutral-dark{background:var(--clr-neutral-dark);}
 
 /* ------------------------------------------------------------------ */
 /* BUTTONS                                                            */
@@ -41,6 +52,7 @@ a, button, input, select, textarea {
   color: var(--clr-white);
   border: none;
   border-radius: .375rem;
+    padding: .75rem 1.5rem;      /* ← add this */
   transition: background .2s;
 }
 .btn-accent:hover,
@@ -248,39 +260,47 @@ header .navbar {
   text-align: center;
 }
 
+/* ─── FINAL CTA: LESS PADDING ON MOBILE ───────────────────────────────── */
+@media (max-width: 575.98px) {
+  .final-cta .card {
+    /* shrink the fixed max-width so it doesn’t overflow */
+    max-width: 90% !important;
+    /* replace p-5 (3rem) with something lighter */
+    padding: 1.5rem !important;
+    margin: 1rem auto; /* give it breathing room top & bottom */
+  }
+}
 
-/* ===========================
-   Footer → exact Index copy
-   =========================== */
 
-/* 1) Make all footer text white, to start from the same baseline */
+/* ------------------------------------------------------------------ */
+/* FOOTER (copied from contact.css)                                   */
+/* ------------------------------------------------------------------ */
 footer,
-footer h4, 
+footer h4,
 footer p,
-footer li,
 footer small {
-  color: var(--clr-white) !important;
+  color: var(--clr-white)!important;
 }
-
-/* 2) Target only your Quick-Links list anchors */
 footer .list-unstyled a {
-  color: var(--clr-main-light) !important;
+  color: var(--clr-main-light)!important;
 }
-
-/* 3) On hover/focus underline them */
 footer .list-unstyled a:hover,
 footer .list-unstyled a:focus {
-  text-decoration: underline !important;
+  text-decoration: underline!important;
+}
+.bg-neutral-dark { background: var(--clr-neutral-dark)!important; }
+.text-main-light { color: var(--clr-main-light)!important; }
+
+/* ─── SOCIAL LINKS ───────────────────────────────────────────────── */
+.social-links a {
+  display: inline-block;
+  transition: color .2s;
+}
+.social-links a:hover,
+.social-links a:focus {
+  color: var(--clr-accent) !important;  /* switch to your red on hover */
 }
 
-/* ─── UTILITIES FROM index.css ─────────────────────────────────────── */
-/* bring back the dark bg + white-text helpers your footer needs */
-.bg-neutral-dark {
-  background: var(--clr-neutral-dark) !important;
-}
-.text-white {
-  color: var(--clr-white) !important;
-}
 /* ─────────────────────────────────────────────────────────────────── */
 
 /* ────────────────────────────────────────────────────────── *

@@ -54,7 +54,11 @@ textarea:focus-visible{outline:3px solid var(--clr-accent);}
 .phone-number a:hover,.phone-number a:focus{text-decoration:underline;}
 .vr{opacity:.25;}
 
-
+header {
+  position: sticky !important;
+  top: 0;
+  z-index: 1020;
+}
 
 
 /* HERO */
@@ -319,12 +323,35 @@ textarea:focus-visible{outline:3px solid var(--clr-accent);}
   text-align: center;
 }
 
-/* ===== FOOTER ===== */
-footer a{
-  color:var(--clr-main-light);
-  text-decoration:none;
+/* ------------------------------------------------------------------ */
+/* FOOTER (copied from contact.css)                                   */
+/* ------------------------------------------------------------------ */
+footer,
+footer h4,
+footer p,
+footer small {
+  color: var(--clr-white)!important;
 }
-footer a:hover{text-decoration:underline;}
+footer .list-unstyled a {
+  color: var(--clr-main-light)!important;
+}
+footer .list-unstyled a:hover,
+footer .list-unstyled a:focus {
+  text-decoration: underline!important;
+}
+.bg-neutral-dark { background: var(--clr-neutral-dark)!important; }
+.text-main-light { color: var(--clr-main-light)!important; }
+
+/* ─── SOCIAL LINKS ───────────────────────────────────────────────── */
+.social-links a {
+  display: inline-block;
+  transition: color .2s;
+}
+.social-links a:hover,
+.social-links a:focus {
+  color: var(--clr-accent) !important;  /* switch to your red on hover */
+}
+
 
 
 /* ===================================================== *
@@ -420,46 +447,39 @@ footer a:hover{text-decoration:underline;}
   }
 }
 
-/* =================================================================== *
-   NAVBAR – make it taller and sticky at the top
- * =================================================================== */
+/* ------------------------------------------------------------------ */
+/* NAVBAR (as About)                                                  */
+/* ------------------------------------------------------------------ */
 header {
-  position: sticky;
+  position: sticky !important;
   top: 0;
-  z-index: 1020;    /* above other content */
+  z-index: 1020;
   background: var(--clr-white);
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
 }
-
-/* Increase vertical padding for a roomier feel */
-header .navbar {
-  padding-block: 1rem;   /* 1rem top & bottom */
-}
-
-/* Slightly larger brand logo text */
-.navbar-brand {
-  font-size: 1.5rem;
-}
-
-/* Bigger tappable areas for nav links */
 .navbar-nav .nav-link {
-  padding: .75rem 1.25rem;
-  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--clr-neutral-dark);
+  margin-inline: .75rem;
 }
-
-/* Upsize the main CTA button in the navbar */
-header .btn-accent {
-  padding-block: .65rem;
-  padding-inline: 1.5rem;
-  font-size: 1rem;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--clr-main-blue);
 }
-
-/* push the CTA to the right when expanded at ≥1200px */
+.phone-number a:hover,
+.phone-number a:focus {
+  text-decoration: underline;
+}
+.vr { opacity: .25; }
+header .navbar { padding-block: 1rem; }
+.navbar-brand { font-size: 1.5rem; }
 @media (min-width:1200px) {
-  header .btn-accent {
-    margin-left: 1rem !important;  /* instead of ms-lg-3 */
-  }
+  header .btn-accent { margin-left:1rem!important; }
 }
 
+.btn-accent {
+  padding: .75rem 1.5rem;      /* ← add this */
+}
 
 /* ────────────────────────────────────────────────────────── *
    NAVBAR SHRINK & NO‐WRAP FOR 992px–1199px (lg to just shy of xl)
@@ -545,3 +565,13 @@ html, body {
   align-self: start;  /* keeps it left-aligned */
 }
 
+/* ─── FINAL CTA: LESS PADDING ON MOBILE ───────────────────────────────── */
+@media (max-width: 575.98px) {
+  .final-cta .card {
+    /* shrink the fixed max-width so it doesn’t overflow */
+    max-width: 90% !important;
+    /* replace p-5 (3rem) with something lighter */
+    padding: 1.5rem !important;
+    margin: 1rem auto; /* give it breathing room top & bottom */
+  }
+}

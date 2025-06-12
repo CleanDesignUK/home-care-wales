@@ -28,6 +28,18 @@ body {
   outline-offset: 2px;
 }
 
+/* ===== GLOBAL ===== */
+html{scroll-behavior:smooth;}
+body{font-family:"Helvetica Neue",Arial,sans-serif;color:var(--clr-neutral-dark);line-height:1.6;}
+a,button,input,select,textarea{outline-offset:2px;}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{outline:3px solid var(--clr-accent);}
+.text-brand-green{color:var(--clr-brand-green);}
+.bg-neutral-dark{background:var(--clr-neutral-dark);}
+
 /* ------------------------------------------------------------------ */
 /* BUTTONS                                                            */
 /* ------------------------------------------------------------------ */
@@ -36,6 +48,7 @@ body {
   color: var(--clr-white);
   border: none;
   border-radius: .375rem;
+    padding: .75rem 1.5rem;      /* ← add this */
   transition: background .2s;
 }
 .btn-accent:hover,
@@ -139,28 +152,35 @@ header .navbar { padding-block: 1rem; }
 }
 
 /* ------------------------------------------------------------------ */
-/* FOOTER (exact copy of index)                                       */
+/* FOOTER (copied from contact.css)                                   */
 /* ------------------------------------------------------------------ */
 footer,
 footer h4,
 footer p,
 footer small {
-  color: var(--clr-white) !important;
+  color: var(--clr-white)!important;
 }
 footer .list-unstyled a {
-  color: var(--clr-main-light) !important;
-  text-decoration: none;
+  color: var(--clr-main-light)!important;
 }
 footer .list-unstyled a:hover,
 footer .list-unstyled a:focus {
-  text-decoration: underline !important;
+  text-decoration: underline!important;
 }
-.bg-neutral-dark {
-  background: var(--clr-neutral-dark) !important;
+.bg-neutral-dark { background: var(--clr-neutral-dark)!important; }
+.text-main-light { color: var(--clr-main-light)!important; }
+
+/* ─── SOCIAL LINKS ───────────────────────────────────────────────── */
+.social-links a {
+  display: inline-block;
+  transition: color .2s;
 }
-.text-white {
-  color: var(--clr-white) !important;
+.social-links a:hover,
+.social-links a:focus {
+  color: var(--clr-accent) !important;  /* switch to your red on hover */
 }
+
+
 /* ========== FAQ SECTION (only shape edit below) ========== */
 .faq-section{position:relative;overflow:hidden;background:#fff;}
 
@@ -207,54 +227,4 @@ footer .list-unstyled a:focus {
 @media (max-width:767.98px){
   .faq-intro{font-size:1rem;margin-top:1.25rem;}
   .faq-shape{left:-30%;width:160%;}     /* ensure full bleed on mobile */
-}
-
-/* --------------------------------------- *
-   FAQ: force all text (and links) to black
-* --------------------------------------- */
-
-/* Make sure --clr-heading is defined */
-:root {
-  /* ...your other vars... */
-  --clr-heading: black;
-}
-
-/* Container-level text colour */
-#faq,
-#faq * {
-  color: var(--clr-heading) ;
-}
-
-/* Override the accordion-button default blue */
-#faq .accordion-button {
-  color: var(--clr-heading) ;
-}
-
-/* Make any links inside FAQ black and underlined on hover */
-#faq a {
-  color: var(--clr-heading) ;
-  text-decoration: none;
-}
-#faq a:hover,
-#faq a:focus {
-  text-decoration: underline ;
-}
-/* ==========================================================================
-   FAQ background shapes – send behind & let clicks go through
-   ========================================================================== */
-.faq-section {
-  position: relative; /* ensure we have a stacking context */
-}
-
-.faq-shape,
-.faq-dots {
-  position: absolute;  /* they already are */
-  pointer-events: none; /* so clicks go straight through them */
-  z-index: -1;          /* sink them behind the FAQ content */
-}
-
-/* just in case, bring the accordion above them */
-#faq .accordion {
-  position: relative;
-  z-index: 1;
 }

@@ -1,0 +1,243 @@
+/* ===== COLOUR PALETTE ===== */
+:root {
+  --clr-main-light:    #faeea7;
+  --clr-main-blue:     #87b1cb;
+  --clr-neutral-light: #f8f8f8;
+  --clr-neutral-dark:  #4a4a4a;
+  --clr-brand-green:   #00963f;
+  --clr-accent:        #ff4e59;
+  --clr-white:         #ffffff;
+  /* Light tints for testimonial backgrounds */
+  --bg-lightest: rgba(250,238,167,0.15);
+  --bg-light-green: rgba(0,150,63,0.1);
+  --bg-light-blue: rgba(135,177,203,0.1);
+}
+
+/* ------------------------------------------------------------------ */
+/* Global resets & typography                                         */
+/* ------------------------------------------------------------------ */
+html {
+  font-size: 110%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: var(--clr-neutral-dark);
+}
+:focus-visible {
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 2px;
+}
+a { text-decoration: none; }
+
+/* ===== GLOBAL ===== */
+html{scroll-behavior:smooth;}
+body{font-family:"Helvetica Neue",Arial,sans-serif;color:var(--clr-neutral-dark);line-height:1.6;}
+a,button,input,select,textarea{outline-offset:2px;}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{outline:3px solid var(--clr-accent);}
+.text-brand-green{color:var(--clr-brand-green);}
+.bg-neutral-dark{background:var(--clr-neutral-dark);}
+
+/* ------------------------------------------------------------------ */
+/* NAVBAR (as About)                                                  */
+/* ------------------------------------------------------------------ */
+header {
+  position: sticky !important;
+  top: 0;
+  z-index: 1020;
+  background: var(--clr-white);
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: var(--clr-neutral-dark);
+  margin-inline: .75rem;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--clr-main-blue);
+}
+.phone-number a:hover,
+.phone-number a:focus {
+  text-decoration: underline;
+}
+.vr { opacity: .25; }
+header .navbar { padding-block: 1rem; }
+.navbar-brand { font-size: 1.5rem; }
+@media (min-width:1200px) {
+  header .btn-accent { margin-left:1rem!important; }
+}
+
+/* ------------------------------------------------------------------ */
+/* HERO SECTION                                                       */
+/* ------------------------------------------------------------------ */
+.stories-hero {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.stories-hero img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0; left: 0;
+}
+.stories-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+.stories-hero .container {
+  position: relative;
+  z-index: 1;
+}
+.stories-hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  max-width: 40rem;
+  margin: 0 auto 1rem;
+}
+.stories-hero .lead {
+  max-width: 36rem;
+  margin: 0 auto;
+}
+/* spacing for hero CTA button */
+.stories-hero .btn-accent {
+  margin-top: 1rem;
+}
+
+/* stories.css */
+/* ─── ACCENT BUTTON ───────────────────────────────────────────────── */
+.btn-accent {
+  background: var(--clr-accent);
+  color: var(--clr-white);
+  border: none;
+  border-radius: .375rem;
+  padding: .75rem 1.5rem;
+  transition: background .2s;
+}
+.btn-accent:hover,
+.btn-accent:focus {
+  background: #e64351;
+  color: var(--clr-white);
+}
+
+/* ─── HERO OVERLAY Z-INDEX ─────────────────────────────────────────── */
+.stories-hero {
+  position: relative;
+  overflow: hidden;
+}
+.stories-hero .overlay {
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.stories-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── BUTTON SPACING ───────────────────────────────────────────────── */
+.stories-hero .btn-accent {
+  margin-top: 1rem;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* STORIES SECTION                                                    */
+/* ------------------------------------------------------------------ */
+.stories-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--clr-neutral-dark);
+}
+.stories-intro {
+  font-size: 1.1rem;
+  color: var(--clr-neutral-dark);
+  max-width: 48rem;
+  margin: 0 auto 2rem;
+}
+
+/* Testimonial image + quote */
+.testi-img {
+  position: relative;
+}
+.testi-img .big-quote {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  font-size: 4rem;
+  color: var(--clr-accent);
+}
+
+
+/* Testimonial content panels */
+.testi-content {
+  position: relative;
+  z-index: 1;
+}
+.bg-lightest     { background: var(--bg-lightest); }
+.bg-neutral-light { background: var(--clr-neutral-light); }
+.bg-light-green  { background: var(--bg-light-green); }
+.bg-light-blue   { background: var(--bg-light-blue); }
+
+.testi-content p {
+  margin: 0 0 1rem;
+}
+.testi-text {
+  font-size: 1.05rem;
+  color: var(--clr-neutral-dark);
+  line-height: 1.6;
+}
+.testi-author {
+  font-size: .95rem;
+  color: var(--clr-neutral-dark);
+}
+
+/* ------------------------------------------------------------------ */
+/* FOOTER (copied from contact.css)                                   */
+/* ------------------------------------------------------------------ */
+footer,
+footer h4,
+footer p,
+footer small {
+  color: var(--clr-white)!important;
+}
+footer .list-unstyled a {
+  color: var(--clr-main-light)!important;
+}
+footer .list-unstyled a:hover,
+footer .list-unstyled a:focus {
+  text-decoration: underline!important;
+}
+.bg-neutral-dark { background: var(--clr-neutral-dark)!important; }
+.text-main-light { color: var(--clr-main-light)!important; }
+
+/* ─── SOCIAL LINKS ───────────────────────────────────────────────── */
+.social-links a {
+  display: inline-block;
+  transition: color .2s;
+}
+.social-links a:hover,
+.social-links a:focus {
+  color: var(--clr-accent) !important;  /* switch to your red on hover */
+}
+
+/* ------------------------------------------------------------------ */
+/* RESPONSIVE TWEAKS                                                   */
+/* ------------------------------------------------------------------ */
+@media (max-width: 575.98px) {
+  .stories-hero h1 { font-size: 1.75rem; }
+  .stories-hero .lead { font-size: 1rem; }
+  .testi-img .big-quote { font-size: 3rem; }
+}
