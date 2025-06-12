@@ -1,0 +1,260 @@
+/* ===== COLOUR SYSTEM ===== */
+:root {
+  --clr-main-light:    #faeea7;
+  --clr-main-blue:     #87b1cb;
+  --clr-neutral-light: #f8f8f8;
+  --clr-neutral-dark:  #4a4a4a;
+  --clr-brand-green:   #00963f;
+  --clr-accent:        #ff4e59;
+  --clr-white:         #ffffff;
+}
+
+/* ------------------------------------------------------------------ */
+/* Global resets & typography                                         */
+/* ------------------------------------------------------------------ */
+html {
+  font-size: 110%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: var(--clr-neutral-dark);
+  line-height: 1.6;
+}
+:focus-visible {
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* BUTTONS                                                            */
+/* ------------------------------------------------------------------ */
+.btn-accent {
+  background: var(--clr-accent);
+  color: var(--clr-white);
+  border: none;
+  border-radius: .375rem;
+  transition: background .2s;
+}
+.btn-accent:hover,
+.btn-accent:focus {
+  background: #e64351;
+}
+
+/* ------------------------------------------------------------------ */
+/* NAVBAR (as About)                                                  */
+/* ------------------------------------------------------------------ */
+header {
+  position: sticky !important;
+  top: 0;
+  z-index: 1020;
+  background: var(--clr-white);
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: var(--clr-neutral-dark);
+  margin-inline: .75rem;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--clr-main-blue);
+}
+.phone-number a:hover,
+.phone-number a:focus {
+  text-decoration: underline;
+}
+.vr { opacity: .25; }
+header .navbar { padding-block: 1rem; }
+.navbar-brand { font-size: 1.5rem; }
+@media (min-width:1200px) {
+  header .btn-accent { margin-left:1rem!important; }
+}
+
+/* ------------------------------------------------------------------ */
+/* CONTACT SECTION                                                    */
+/* ------------------------------------------------------------------ */
+.contact-section {
+  padding: 4rem 0;
+}
+.contact-section h1 {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 700;
+}
+.contact-copy {
+  font-size: 1rem;
+  max-width: 32rem;
+  color: var(--clr-neutral-dark);
+  line-height: 1.6;
+}
+.contact-card {
+  background: var(--clr-white);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.05);
+  min-width: 12rem;
+}
+.contact-card .bi {
+  font-size: 1.75rem;
+}
+.text-accent {
+  color: var(--clr-accent) !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* FORM CARD                                                          */
+/* ------------------------------------------------------------------ */
+.contact-form-card {
+  background: var(--clr-neutral-light);
+}
+.contact-form-card .form-label {
+  font-size: .9rem;
+  color: var(--clr-neutral-dark);
+}
+.contact-form-card .form-control {
+  border: none;
+  padding: .75rem 1.25rem;
+}
+.contact-form-card .form-control:focus {
+  box-shadow: 0 0 0 .2rem rgba(255,78,89,.25);
+}
+
+/* ------------------------------------------------------------------ */
+/* TESTIMONIALS MOBILE FIX                                            */
+/* ------------------------------------------------------------------ */
+@media (max-width:575.98px) {
+  .testimonial-section .big-quote {
+    position: static; display: block;
+    margin: 1rem 0 0; line-height: 1;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* FINAL CTA                                                          */
+/* ------------------------------------------------------------------ */
+.final-cta {
+  display: none; /* not used on contact page */
+}
+
+/* ------------------------------------------------------------------ */
+/* FOOTER (exact copy of index)                                       */
+/* ------------------------------------------------------------------ */
+footer,
+footer h4,
+footer p,
+footer small {
+  color: var(--clr-white) !important;
+}
+footer .list-unstyled a {
+  color: var(--clr-main-light) !important;
+  text-decoration: none;
+}
+footer .list-unstyled a:hover,
+footer .list-unstyled a:focus {
+  text-decoration: underline !important;
+}
+.bg-neutral-dark {
+  background: var(--clr-neutral-dark) !important;
+}
+.text-white {
+  color: var(--clr-white) !important;
+}
+/* ========== FAQ SECTION (only shape edit below) ========== */
+.faq-section{position:relative;overflow:hidden;background:#fff;}
+
+.faq-shape{
+  position:absolute;
+  top:-15%;                 /* slightly up so curve not too low */
+  left:-10%;                /* start further left */
+  width:120%;               /* stretch width so it reaches right edge */
+  height:140%;
+  background:var(--clr-main-light);
+  opacity:.15;
+  transform:rotate(-6deg);
+  border-radius:50%;
+}
+
+/* dotted overlay unchanged */
+.faq-dots{
+  position:absolute;right:-120px;top:-60px;width:360px;height:360px;
+  background-image:radial-gradient(var(--clr-neutral-light) 22%,transparent 22%);
+  background-size:22px 22px;opacity:.4;
+}
+
+/* headings & intro (darker now via --clr-heading) */
+.faq-heading{
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:700;
+  line-height:1.2;
+}
+.faq-intro{font-size:1.15rem;color:var(--clr-heading);}
+
+/* accordion cards (unchanged) */
+.faq-card .accordion-button{
+  background:#f8f8f8;border:none;font-weight:600;font-size:1rem;
+  padding:1.1rem 1.4rem;border-radius:.75rem;
+}
+.faq-card .accordion-button:not(.collapsed){
+  background:var(--clr-main-light);color:var(--clr-heading);
+  box-shadow:inset 0 0 0 1px var(--clr-main-light);
+}
+.faq-card .accordion-body{padding:1rem 1.4rem 1.25rem;font-size:1rem;}
+.faq-card{border:none;}
+.faq-card+.faq-card{margin-top:1rem;}
+
+@media (max-width:767.98px){
+  .faq-intro{font-size:1rem;margin-top:1.25rem;}
+  .faq-shape{left:-30%;width:160%;}     /* ensure full bleed on mobile */
+}
+
+/* --------------------------------------- *
+   FAQ: force all text (and links) to black
+* --------------------------------------- */
+
+/* Make sure --clr-heading is defined */
+:root {
+  /* ...your other vars... */
+  --clr-heading: black;
+}
+
+/* Container-level text colour */
+#faq,
+#faq * {
+  color: var(--clr-heading) ;
+}
+
+/* Override the accordion-button default blue */
+#faq .accordion-button {
+  color: var(--clr-heading) ;
+}
+
+/* Make any links inside FAQ black and underlined on hover */
+#faq a {
+  color: var(--clr-heading) ;
+  text-decoration: none;
+}
+#faq a:hover,
+#faq a:focus {
+  text-decoration: underline ;
+}
+/* ==========================================================================
+   FAQ background shapes – send behind & let clicks go through
+   ========================================================================== */
+.faq-section {
+  position: relative; /* ensure we have a stacking context */
+}
+
+.faq-shape,
+.faq-dots {
+  position: absolute;  /* they already are */
+  pointer-events: none; /* so clicks go straight through them */
+  z-index: -1;          /* sink them behind the FAQ content */
+}
+
+/* just in case, bring the accordion above them */
+#faq .accordion {
+  position: relative;
+  z-index: 1;
+}

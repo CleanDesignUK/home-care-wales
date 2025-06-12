@@ -21,7 +21,7 @@
 }
 
 /* 1. Larger base font for elderly accessibility (20px) */
-html { font-size:125%; scroll-behavior:smooth; }
+html { font-size:110%; scroll-behavior:smooth; }
 body { font-family:"Helvetica Neue",Arial,sans-serif; color:var(--clr-neutral-dark); line-height:1.6; }
 /* 2. Skip link */
 .skip-link {
@@ -53,6 +53,9 @@ textarea:focus-visible{outline:3px solid var(--clr-accent);}
 .navbar-nav .nav-link:hover,.navbar-nav .nav-link:focus{color:var(--clr-main-blue);}
 .phone-number a:hover,.phone-number a:focus{text-decoration:underline;}
 .vr{opacity:.25;}
+
+
+
 
 /* HERO */
 .hero{min-height:80vh;background:url(hero.jpg) center/cover no-repeat;position:relative;display:flex;align-items:center;}
@@ -298,6 +301,24 @@ textarea:focus-visible{outline:3px solid var(--clr-accent);}
   .faq-shape{left:-30%;width:160%;}     /* ensure full bleed on mobile */
 }
 
+/* ────────────────────────────────────────────────────────── *
+   FINAL CTA (background-image, no overlay)
+ * ────────────────────────────────────────────────────────── */
+.final-cta {
+  position: relative;
+  height: 80vh;
+
+  /* use your own image here */
+  background: url('cta.jpg') center/cover no-repeat;
+}
+.final-cta .container { z-index: 1; }
+.final-cta .card {
+  background: var(--clr-white);
+  border-radius: .75rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+  text-align: center;
+}
+
 /* ===== FOOTER ===== */
 footer a{
   color:var(--clr-main-light);
@@ -431,3 +452,96 @@ header .btn-accent {
   padding-inline: 1.5rem;
   font-size: 1rem;
 }
+
+/* push the CTA to the right when expanded at ≥1200px */
+@media (min-width:1200px) {
+  header .btn-accent {
+    margin-left: 1rem !important;  /* instead of ms-lg-3 */
+  }
+}
+
+
+/* ────────────────────────────────────────────────────────── *
+   NAVBAR SHRINK & NO‐WRAP FOR 992px–1199px (lg to just shy of xl)
+ * ────────────────────────────────────────────────────────── */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* 1) Hide the phone number pill to free up width */
+  .phone-number { display: none !important; }
+
+  /* 2) Force the nav‐links to stay on one line and shrink their padding/font */
+  .navbar-nav {
+    flex-wrap: nowrap;       /* never wrap */
+  }
+  .navbar-nav .nav-link {
+    margin: 0 0.5rem;        /* tighter spacing */
+    padding: 0.25rem 0.5rem; /* smaller click targets */
+    font-size: 0.9rem;       /* slightly smaller text */
+    white-space: nowrap;     /* prevent breaking */
+  }
+
+  /* 3) Shrink the main CTA button just for this band */
+  header .btn-accent {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    margin-left: 1rem;       /* keep it from pressing into the links */
+  }
+
+  /* 4) Bump brand/logo over just a little */
+  .navbar-brand {
+    margin-right: 1rem;
+  }
+
+  /* 5) Collapse any extra container padding so we get every pixel */
+  header .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* finally, just in case you ever see any overflow again… */
+html, body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 575.98px) {
+  /* 1) Make sure the container stays a flex row, and space items out */
+  header .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* 2) Hide the phone number on phones, so it doesn’t push things off screen */
+  .phone-number {
+    display: none ;
+  }
+
+  /* 3) Stop the brand wrapper from growing — so the toggler naturally sits to its right */
+  .navbar .d-flex.align-items-center.flex-grow-1.flex-lg-grow-0 {
+    flex-grow: 0 ;
+  }
+
+  /* 4) Remove any leftover absolute‐position rules on the toggler */
+  .navbar-toggler {
+    position: relative ;
+    left: auto ;
+    transform: none ;
+    margin: 0 ;
+    top: auto ;
+  }
+}
+
+/* 1. Make each .info-card-body a column flex container */
+.info-card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2. Push the button to the bottom of the card */
+.info-card-body .btn {
+  margin-top: auto;
+  margin-top: 2rem !important;   /* takes up all leftover space above */
+  align-self: start;  /* keeps it left-aligned */
+}
+
