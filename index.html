@@ -94,24 +94,34 @@
         can live safely and happily at&nbsp;home.
       </p>
 
-      <!-- Lead-capture (phone) -->
-      <form action="https://api.web3forms.com/submit" method="POST"
-            class="hero-form needs-validation" novalidate>
-        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
-        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
+<!-- 1) Include SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-        <div class="input-group input-group-lg flex-nowrap">
-          <label class="visually-hidden" for="phone">Phone number</label>
-          <input required type="tel" id="phone" name="phone"
-                 class="form-control flex-grow-1"
-                 placeholder="Enter your phone number" />
+<!-- 2) Your form with an ID added -->
+<form id="lead-capture-form"
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      class="hero-form needs-validation"
+      novalidate
+      data-web3forms-captcha="true">
 
-          <button type="submit" class="btn btn-accent">
-            Get&nbsp;My&nbsp;Free&nbsp;Care&nbsp;Call
-          </button>
-        </div>
-        <small class="form-text text-white">Instant&nbsp;response • No&nbsp;spam&nbsp;ever</small>
-      </form>
+  <!-- Web3Forms access key -->
+  <input type="hidden" name="access_key" value="ae44b6d0-9991-4f69-974e-802f107a5cf3" />
+
+  <!-- Honeypot -->
+  <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
+
+  <div class="input-group input-group-lg flex-nowrap">
+    <label class="visually-hidden" for="phone">Phone number</label>
+    <input required type="tel" id="phone" name="phone"
+           class="form-control flex-grow-1"
+           placeholder="Enter your phone number" />
+    <button type="submit" class="btn btn-accent">
+      Get&nbsp;My&nbsp;Free&nbsp;Care&nbsp;Call
+    </button>
+  </div>
+  <small class="form-text text-white">Instant&nbsp;response • No&nbsp;spam&nbsp;ever</small>
+</form>
     </div>
   </div>
 </section>
@@ -642,6 +652,51 @@
 })();
 </script>
 
+<script>
+(() => {
+  const form = document.getElementById('lead-capture-form');
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // HTML5 validation styling
+    if (!form.checkValidity()) {
+      form.classList.add('was-validated');
+      return;
+    }
+
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: form.method,
+        body: data
+      });
+      if (!res.ok) throw new Error('Submission failed');
+
+      // Show SweetAlert success
+      Swal.fire({
+        icon: 'success',
+        title: 'Thank you!',
+        text: 'We’ve received your request and will be in touch shortly.',
+        confirmButtonText: 'Close'
+      });
+
+      // Reset & hide form to prevent duplicates
+      form.reset();
+      form.classList.add('d-none');
+
+    } catch (err) {
+      console.error(err);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops!',
+        text: 'Something went wrong. Please try again later.'
+      });
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
