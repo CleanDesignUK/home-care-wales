@@ -39,6 +39,17 @@
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
+  
+<!-- COOKIE CONSENT BANNER -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite">
+    <p>
+      We use cookies to improve your experience. By continuing, you agree to our
+      <a href="privacy.html">Privacy Policy</a>.
+    </p>
+    <button id="cookie-accept" class="btn btn-accent">
+      Accept
+    </button>
+  </div>
 
   <!-- NAVBAR (same as About) -->
   <header class="shadow-sm bg-white">
@@ -696,6 +707,21 @@
     }
   });
 })();
+</script>
+
+<script>
+  (function() {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('cookie-accept');
+    // if they haven't already accepted...
+    if (!localStorage.getItem('cookiesAccepted')) {
+      banner.style.display = 'flex';
+    }
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('cookiesAccepted', 'true');
+      banner.style.display = 'none';
+    });
+  })();
 </script>
 
 </body>

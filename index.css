@@ -571,3 +571,42 @@ header .navbar { padding-block: 1rem; }
     margin: 1rem auto; /* give it breathing room top & bottom */
   }
 }
+
+/* ─── Cookie Consent Banner ───────────────────────────────────────── */
+.cookie-banner {
+  display: none; /* hidden until JS shows it */
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+.cookie-banner p {
+  margin: 0;
+  line-height: 1.4;
+}
+.cookie-banner a {
+  color: var(--clr-accent);
+  text-decoration: underline;
+}
+.cookie-banner .btn-accent {
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Stack on very small screens */
+@media (max-width: 575.98px) {
+  .cookie-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cookie-banner .btn-accent {
+    margin-top: 0.75rem;
+  }
+}

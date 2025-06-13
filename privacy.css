@@ -1,0 +1,135 @@
+/* privacy.css */
+
+/* ===== COLOUR SYSTEM ===== */
+:root {
+  --clr-main-light:    #faeea7;
+  --clr-main-blue:     #87b1cb;
+  --clr-neutral-light: #f8f8f8;
+  --clr-neutral-dark:  #4a4a4a;
+  --clr-brand-green:   #00963f;
+  --clr-accent:        #ff4e59;
+  --clr-white:         #ffffff;
+}
+
+/* ------------------------------------------------------------------ */
+/* Global resets & typography                                         */
+/* ------------------------------------------------------------------ */
+html {
+  font-size: 110%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: var(--clr-neutral-dark);
+  line-height: 1.6;
+}
+:focus-visible {
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* BUTTONS                                                            */
+/* ------------------------------------------------------------------ */
+.btn-accent {
+  background: var(--clr-accent);
+  color: var(--clr-white);
+  border: none;
+  border-radius: .375rem;
+  transition: background .2s;
+  padding: .75rem 1.5rem;
+}
+.btn-accent:hover,
+.btn-accent:focus {
+  background: #e64351;
+}
+
+/* ------------------------------------------------------------------ */
+/* NAVBAR                                                             */
+/* ------------------------------------------------------------------ */
+header {
+  position: sticky !important;
+  top: 0;
+  z-index: 1020;
+  background: var(--clr-white);
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: var(--clr-neutral-dark);
+  margin-inline: .75rem;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--clr-main-blue);
+}
+.phone-number a:hover,
+.phone-number a:focus {
+  text-decoration: underline;
+}
+.vr { opacity: .25; }
+
+/* ------------------------------------------------------------------ */
+/* PRIVACY SECTION                                                    */
+/* ------------------------------------------------------------------ */
+.privacy-section {
+  padding: 4rem 0;
+}
+.privacy-section h1 {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 700;
+}
+.privacy-section h2 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.privacy-section p,
+.privacy-section ul {
+  margin-bottom: 1rem;
+}
+.privacy-section ul {
+  padding-left: 1.25rem;
+}
+.privacy-section a {
+  color: var(--clr-accent);
+  text-decoration: underline;
+}
+
+/* ------------------------------------------------------------------ */
+/* FOOTER                                                             */
+/* ------------------------------------------------------------------ */
+footer,
+footer h4,
+footer p,
+footer small {
+  color: var(--clr-white) !important;
+}
+footer .list-unstyled a,
+footer a.text-main-light {
+  color: var(--clr-main-light) !important;
+}
+footer .list-unstyled a:hover,
+footer a.text-main-light:hover,
+footer a.text-main-light:focus {
+  text-decoration: underline !important;
+}
+.bg-neutral-dark {
+  background: var(--clr-neutral-dark) !important;
+}
+.text-main-light {
+  color: var(--clr-main-light) !important;
+}
+
+/* SOCIAL LINKS */
+.social-links a {
+  display: inline-block;
+  transition: color .2s;
+}
+.social-links a:hover,
+.social-links a:focus {
+  color: var(--clr-accent) !important;
+}
+
