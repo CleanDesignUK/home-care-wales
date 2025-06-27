@@ -241,3 +241,56 @@ footer .list-unstyled a:focus {
   .stories-hero .lead { font-size: 1rem; }
   .testi-img .big-quote { font-size: 3rem; }
 }
+
+/* ─── COLLAPSIBLE TESTIMONIAL CARDS ──────────────────────────────── */
+.testimonial-card{
+  background:var(--clr-neutral-light);
+  border-left:.5rem solid var(--clr-accent);
+  border-radius:.5rem;
+  overflow:hidden;
+}
+
+/* summary bar */
+.testimonial-card summary{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  padding:1rem 1.5rem;
+  cursor:pointer;
+  list-style:none;          /* removes default triangle */
+  font-weight:600;
+}
+.testimonial-card summary::-webkit-details-marker{display:none;} /* Chrome/Safari */
+
+/* chevron icon rotate on open */
+.testimonial-card .bi{transition:transform .3s;}
+.testimonial-card[open] .bi{transform:rotate(180deg);}
+
+/* quote body */
+.testimonial-card .quote-text{
+  font-size:1.05rem;
+  line-height:1.7;
+  padding:0 1.5rem 1rem;
+  margin:0;
+  color:var(--clr-neutral-dark);
+  font-style:italic;
+}
+
+/* attribution */
+.testimonial-card .attribution{
+  padding:0 1.5rem 1.5rem;
+  margin:0;
+  font-weight:600;
+  color:var(--clr-neutral-dark);
+}
+
+/* small-screen tweak */
+@media(max-width:575.98px){
+  .testimonial-card summary{font-size:1rem;}
+  .testimonial-card .quote-text{font-size:1rem;}
+}
+
+/* keep bullets indented a bit */
+.quote-text ul { padding-left: 1.25rem; margin: 0 0 1rem; }
+.quote-text li { margin-bottom: .25rem; }
