@@ -54,11 +54,24 @@ textarea:focus-visible{outline:3px solid var(--clr-accent);}
 .phone-number a:hover,.phone-number a:focus{text-decoration:underline;}
 .vr{opacity:.25;}
 
+.navbar-brand img {
+  width: 36px;
+  height: auto;
+}
+
+
 header {
   position: sticky !important;
   top: 0;
   z-index: 1020;
 }
+
+/* make sure all h1s have an explicit size */
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.15;
+}
+
 
 
 /* HERO */
@@ -256,6 +269,13 @@ header {
   .testimonial-text{font-size:1rem;}
   .big-quote{font-size:4rem;}
 }
+
+.btn-primary {
+  background-color: var(--clr-accent);
+  border-color:    var(--clr-accent);
+  color:           #fff;
+}
+
 
 /* ========== FAQ SECTION (only shape edit below) ========== */
 .faq-section{position:relative;overflow:hidden;background:#fff;}
@@ -569,44 +589,5 @@ header .navbar { padding-block: 1rem; }
     /* replace p-5 (3rem) with something lighter */
     padding: 1.5rem !important;
     margin: 1rem auto; /* give it breathing room top & bottom */
-  }
-}
-
-/* ─── Cookie Consent Banner ───────────────────────────────────────── */
-.cookie-banner {
-  display: none; /* hidden until JS shows it */
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  background: rgba(0, 0, 0, 0.85);
-  color: #fff;
-  padding: 1rem 1.5rem;
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  font-size: 0.9rem;
-}
-.cookie-banner p {
-  margin: 0;
-  line-height: 1.4;
-}
-.cookie-banner a {
-  color: var(--clr-accent);
-  text-decoration: underline;
-}
-.cookie-banner .btn-accent {
-  margin: 0;
-  white-space: nowrap;
-}
-
-/* Stack on very small screens */
-@media (max-width: 575.98px) {
-  .cookie-banner {
-    flex-direction: column;
-    text-align: center;
-  }
-  .cookie-banner .btn-accent {
-    margin-top: 0.75rem;
   }
 }

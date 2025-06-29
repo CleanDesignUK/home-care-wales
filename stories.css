@@ -44,6 +44,12 @@ textarea:focus-visible{outline:3px solid var(--clr-accent);}
 .text-brand-green{color:var(--clr-brand-green);}
 .bg-neutral-dark{background:var(--clr-neutral-dark);}
 
+/* ensure all H1s on the site have a defined size */
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.15;
+}
+
 /* ------------------------------------------------------------------ */
 /* NAVBAR (as About)                                                  */
 /* ------------------------------------------------------------------ */
@@ -73,6 +79,12 @@ header .navbar { padding-block: 1rem; }
 @media (min-width:1200px) {
   header .btn-accent { margin-left:1rem!important; }
 }
+
+.navbar-brand img {
+  width: 36px;
+  height: auto;
+}
+
 
 /* ------------------------------------------------------------------ */
 /* HERO SECTION                                                       */
@@ -294,3 +306,15 @@ footer .list-unstyled a:focus {
 /* keep bullets indented a bit */
 .quote-text ul { padding-left: 1.25rem; margin: 0 0 1rem; }
 .quote-text li { margin-bottom: .25rem; }
+
+/* ensure underlines on any .text-main-light links */
+a.text-main-light {
+  text-decoration: underline;
+  /* optionally also darken if you want: */
+  /* color: var(--clr-neutral-dark); */
+}
+
+/* if you have any small <p class="small"> on white bg, bump it darker: */
+footer p.small {
+  color: var(--clr-neutral-dark);
+}

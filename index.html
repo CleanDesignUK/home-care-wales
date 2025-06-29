@@ -42,15 +42,29 @@
 <body>
   
 <!-- COOKIE CONSENT BANNER -->
-  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite">
-    <p>
-      We use cookies to improve your experience. By continuing, you agree to our
-      <a href="privacy.html">Privacy Policy</a>.
-    </p>
-    <button id="cookie-accept" class="btn btn-accent">
-      Accept
-    </button>
-  </div>
+<div
+  id="cookie-banner"
+  class="cookie-banner"
+  role="dialog"
+  aria-live="polite"
+  aria-labelledby="cookie-banner-title"
+  aria-describedby="cookie-banner-desc"
+>
+  <!-- visually-hidden helper -->
+  <h2 id="cookie-banner-title" class="visually-hidden">
+    Cookie Consent
+  </h2>
+
+  <p id="cookie-banner-desc">
+    We use cookies to improve your experience. By continuing, you agree to our
+    <a href="privacy.html">Privacy Policy</a>.
+  </p>
+
+  <button id="cookie-accept" class="btn btn-accent">
+    Accept
+  </button>
+</div>
+
 
   <!-- NAVBAR (same as About) -->
   <header class="shadow-sm bg-white">
@@ -172,6 +186,9 @@
       <!-- right checklist card -->
       <div class="col-lg-6">
         <div class="why-card shadow-sm bg-white rounded-4 p-4 p-lg-5">
+              <p class="mb-4">
+      Whether your loved one needs a little help each day or more regular support, Home Care Wales is here to help them live safely and happily at home.
+    </p>
           <ul class="why-list list-unstyled mb-4">
             <li>
               <span class="check-icon"></span>
@@ -321,9 +338,12 @@
 <section id="testimonials" class="testimonial-section py-5">
   <div class="container">
 
-    <h2 class="testimonial-heading mb-5">
-      Testimonials of Empowered Families
+    <h2 class="testimonial-heading mb-3">
+      What Families Say About Us
     </h2>
+    <p class="lead text-start mb-5">
+      We’re proud to share a few words from families who have trusted Home Care Wales to support their loved ones. Their feedback reflects the care, compassion, and professionalism our team brings to every visit.
+    </p>
 
     <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
       <div class="carousel-inner">
@@ -332,7 +352,7 @@
         <div class="carousel-item active">
           <div class="row g-lg-5 align-items-center">
             <div class="col-lg-5">
-              <img src="testimonial-1.png" class="testimonial-img"
+              <img src="testimonial-1.jpg" class="testimonial-img"
                    alt="Group of happy seniors playing cards">
             </div>
             <div class="col-lg-7">
@@ -342,9 +362,8 @@
                 <strong>home care</strong> at a time of great need. I’m not sure how I would have managed
                 without them.
               </p>
-              <p class="testimonial-author mb-4">—&nbsp;Mrs&nbsp;T.&nbsp;(Holyhead)</p>
 
-              <!-- nav + counter -->
+              <!-- nav + counter (back inside slide) -->
               <div class="nav-cluster">
                 <button class="carousel-nav plain-btn" type="button"
                         data-bs-target="#testimonialCarousel" data-bs-slide="prev" aria-label="Previous">
@@ -364,16 +383,14 @@
         <div class="carousel-item">
           <div class="row g-lg-5 align-items-center">
             <div class="col-lg-5">
-              <img src="testimonial-2.png" class="testimonial-img"
+              <img src="testimonial-2.jpg" class="testimonial-img"
                    alt="Older lady smiling with caregiver">
             </div>
             <div class="col-lg-7">
               <span class="big-quote">&rdquo;</span>
               <p class="testimonial-text">
-                Staff are reliable, friendly and nothing is too much trouble. Mum now sees Jen as a friend
-                and looks forward to every <strong>domiciliary care</strong> visit.
+                Carer was never missed and always on time. The team went above and beyond, helping Mum with her morning routine, daily logs, and even flexible shower days when needed. Their cheerful, empathetic approach made all the difference.
               </p>
-              <p class="testimonial-author mb-4">—&nbsp;L.&nbsp;Jones&nbsp;(Menai&nbsp;Bridge)</p>
 
               <div class="nav-cluster">
                 <button class="carousel-nav plain-btn" type="button"
@@ -394,16 +411,14 @@
         <div class="carousel-item">
           <div class="row g-lg-5 align-items-center">
             <div class="col-lg-5">
-              <img src="testimonial-3.png" class="testimonial-img"
+              <img src="testimonial-3.jpg" class="testimonial-img"
                    alt="Son thanking caregivers">
             </div>
             <div class="col-lg-7">
               <span class="big-quote">&rdquo;</span>
               <p class="testimonial-text">
-                Attendance was never missed and always on time. Flexible, cheerful and quick to respond –
-                I’d recommend them to anyone needing <strong>elderly home care</strong> in Anglesey.
+                After Mum’s hospital stay, we needed reliable, professional support, fast. Home Care Wales delivered exceptional, personalised care (washing, meal prep, light housework and outings) with prompt, reassuring communication throughout.
               </p>
-              <p class="testimonial-author mb-4">—&nbsp;R.&nbsp;Evans&nbsp;(Llangefni)</p>
 
               <div class="nav-cluster">
                 <button class="carousel-nav plain-btn" type="button"
@@ -423,8 +438,16 @@
       </div>
     </div>
 
+    <!-- CTA Button -->
+    <div class="text-center mt-5">
+      <a href="stories.html" class="btn btn-primary btn-lg">
+        Explore More Families’ Success Stories
+      </a>
+    </div>
+
   </div>
 </section>
+
 
 
 <!-- ========= FAQ – Redesigned ============================================ -->
@@ -439,7 +462,7 @@
       </div>
       <div class="col-lg-6">
         <p class="faq-intro">
-          Got a query abut our home care services, flexible domiciliary care visits or how our home care team keep loved ones independent? Check the answers below or contact us. 
+          Got a query about our home care services, flexible domiciliary care visits or how our home care team keep loved ones independent? Check the answers below or contact us. 
         </p>
       </div>
     </div>
@@ -584,7 +607,7 @@
     <div class="container">
       <div class="row gy-4">
         <div class="col-md-4">
-          <h4 class="h6 text-uppercase fw-bold">Home Care Wales</h4>
+          <h3 class="h6 text-uppercase fw-bold">Home Care Wales</h3>
           <p class="mb-0">
             Anglesey-based provider of personalised <strong>home care</strong> &
             <strong>domiciliary care</strong> helping adults live safely and happily at home.
