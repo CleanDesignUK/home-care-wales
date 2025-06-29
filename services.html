@@ -35,8 +35,33 @@
 
   <!-- Custom stylesheet -->
   <link rel="stylesheet" href="services.css" />
-</head>
+      <link rel="stylesheet" href="cookie.css" />
+
 <body>
+
+  <!-- COOKIE CONSENT BANNER -->
+<div
+  id="cookie-banner"
+  class="cookie-banner"
+  role="dialog"
+  aria-live="polite"
+  aria-labelledby="cookie-banner-title"
+  aria-describedby="cookie-banner-desc"
+>
+  <!-- visually-hidden helper -->
+  <h2 id="cookie-banner-title" class="visually-hidden">
+    Cookie Consent
+  </h2>
+
+  <p id="cookie-banner-desc">
+    We use cookies to improve your experience. By continuing, you agree to our
+    <a href="privacy.html">Privacy Policy</a>.
+  </p>
+
+  <button id="cookie-accept" class="btn btn-accent">
+    Accept
+  </button>
+</div>
 
   <!-- NAVBAR (same as About) -->
   <header class="shadow-sm bg-white sticky-top">
@@ -374,5 +399,9 @@
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="cookie.js" defer></script>
+
+
 </body>
 </html>

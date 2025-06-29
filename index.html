@@ -738,25 +738,7 @@
 })();
 </script>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const banner     = document.getElementById('cookie-banner');
-  const acceptBtn  = document.getElementById('cookie-accept');
-  const STORAGEKEY = 'hcw_cookie_consent';
-
-  // Show the banner only if consent hasn’t been stored
-  if (!localStorage.getItem(STORAGEKEY)) {
-    banner.style.display = 'flex';
-  }
-
-  acceptBtn.addEventListener('click', () => {
-    localStorage.setItem(STORAGEKEY, 'agreed');
-    banner.style.display = 'none';
-  });
-});
-</script>
-
-
+<script src="cookie.js" defer></script>
 
 </body>
 </html>
