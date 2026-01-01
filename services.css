@@ -254,13 +254,6 @@ footer .list-unstyled a:focus {
 .text-main-light { color: var(--clr-main-light)!important; }
 
 
-/* make footer links and small copyright text readable */
-footer .text-main-light,
-footer p.small {
-  color: var(--clr-neutral-dark) !important;   /* switch to black/dark */
-  text-decoration: underline !important;       /* don’t rely on color alone */
-}
-
 
 /* ─── SOCIAL LINKS ───────────────────────────────────────────────── */
 .social-links a {
