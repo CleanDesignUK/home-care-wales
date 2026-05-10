@@ -591,3 +591,17 @@ header .navbar { padding-block: 1rem; }
     margin: 1rem auto; /* give it breathing room top & bottom */
   }
 }
+
+.ciw-section {
+  background: #f7f9f5 !important;
+}
+
+.ciw-widget-card {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.ciw-widget-card iframe,
+.ciw-widget-card > div {
+  max-width: 100%;
+}
