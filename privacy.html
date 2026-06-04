@@ -33,12 +33,14 @@
 
   <!-- Custom stylesheet -->
   <link rel="stylesheet" href="privacy.css" />
+    <link rel="stylesheet" href="index.css" />
+
 </head>
 
 <body>
   <!-- NAVBAR -->
-  <header class="shadow-sm bg-white sticky-top">
-    <nav class="navbar navbar-expand-lg" aria-label="Primary">
+  <header class="shadow-sm bg-white">
+    <nav class="navbar navbar-expand-lg sticky-top" aria-label="Primary">
       <div class="container">
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
           <a class="navbar-brand d-flex align-items-center me-0" href="/">
@@ -46,11 +48,17 @@
             <span class="brand-name text-brand-green fw-bold">Home Care Wales</span>
           </a>
           <span class="vr d-none d-lg-inline mx-3"></span>
-          <span class="navbar-text phone-number d-none d-lg-inline">
-            <a href="tel:+447930828575" class="text-decoration-none text-brand-green fw-semibold">
-              07930 828575
-            </a>
-          </span>
+          <span class="navbar-text phone-number d-none d-lg-flex flex-column">
+  <span class="phone-line">
+    <span class="phone-label">Office</span>
+    <a href="tel:01248342517" class="phone-link">01248 342517</a>
+  </span>
+
+  <span class="phone-line">
+    <span class="phone-label">Manager</span>
+    <a href="tel:07930828575" class="phone-link">07930 828575</a>
+  </span>
+</span>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navContent" aria-controls="navContent"
@@ -60,9 +68,9 @@
         <div id="navContent" class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
             <li class="nav-item"><a class="nav-link" href="stories.html">Stories</a></li>
-            <li class="nav-item"><a class="nav-link" href="services.html">Services &amp; Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services & Pricing</a></li>
           </ul>
           <a class="btn btn-accent ms-lg-3 mt-3 mt-lg-0" href="contact.html">
             Contact Us
@@ -70,7 +78,7 @@
         </div>
       </div>
     </nav>
-  </header>
+</header>
 
   <!-- PRIVACY POLICY SECTION -->
   <section class="privacy-section py-5">
@@ -109,12 +117,13 @@
       <h2>8. Contact Us</h2>
       <p>If you have any questions about this policy, please write to:</p>
       <address>
-        Home Care Wales Ltd.<br>
-        Llangefni Business Centre<br>
-        Anglesey LL77 7XA<br>
-        <a href="mailto:info@homecarewales.com">info@homecarewales.com</a><br>
-        07719 046999
-      </address>
+  Home Care Wales Ltd.<br>
+  Parc Mount, Glanhwfa Road<br>
+  Llangefni, LL77 7EY<br>
+  <a href="mailto:info@homecarewales.com">info@homecarewales.com</a><br>
+  Office: 01248 342517<br>
+  Manager: 07930 828575
+</address>
     </div>
   </section>
 
@@ -123,9 +132,9 @@
     <div class="container">
       <div class="row gy-4">
         <div class="col-md-4">
-          <h4 class="h6 text-uppercase fw-bold">Home Care Wales</h4>
+          <h3 class="h6 text-uppercase fw-bold">Home Care Wales</h3>
           <p class="mb-0">
-            Anglesey-based provider of personalised <strong>home care</strong> &amp;
+            Anglesey-based provider of personalised <strong>home care</strong> &
             <strong>domiciliary care</strong> helping adults live safely and happily at home.
           </p>
         </div>
@@ -134,37 +143,62 @@
           <ul class="list-unstyled mb-0">
             <li><a href="index.html" class="text-main-light">Home</a></li>
             <li><a href="about.html" class="text-main-light">About Us</a></li>
-            <li><a href="services.html" class="text-main-light">Services &amp; Pricing</a></li>
+            <li><a href="services.html" class="text-main-light">Services & Pricing</a></li>
             <li><a href="stories.html" class="text-main-light">Stories</a></li>
             <li><a href="contact.html" class="text-main-light">Contact</a></li>
             <li><a href="cookie-policy.html" class="text-main-light">Cookie Policy</a></li>
             <li><a href="privacy.html" class="text-main-light">Privacy Policy</a></li>
-                        <li><a href="document/HomeCareWales_AnnualReport.pdf" class="text-main-light" target="_blank" rel="noopener">Annual Report</a></li>
-
+            <li><a href="document/HomeCareWales_AnnualReport.pdf" class="text-main-light" target="_blank" rel="noopener">Annual Report</a></li>
           </ul>
         </div>
-        <div class="col-md-4">
-          <h4 class="h6 text-uppercase fw-bold">Contact</h4>
-          <p class="mb-1">T1 +447930828575</p>
-          <p class="mb-1">T2 +447719046999</p>
-          <p class="mb-1">
-            E <a href="mailto:info@homecarewales.com" class="text-main-light">info@homecarewales.com</a>
-          </p>
-          <p class="mb-0">Creigiau Eryri, Talwrn, Llangefni, Anglesey, LL77 7TG </p>
-        </div>
-      </div>
+       <div class="col-md-4">
+  <h4 class="h6 text-uppercase fw-bold">Contact</h4>
 
-      <div class="social-links text-center mt-4">
-        <a href="https://www.facebook.com/profile.php?id=100054523386407#"
-           class="text-main-light me-3" target="_blank" rel="noopener">
-          <i class="bi bi-facebook fs-4"></i>
-        </a>
-        <a href="https://g.page/home-care-wales"
-           class="text-main-light" target="_blank" rel="noopener">
-          <i class="bi bi-google fs-4"></i>
-        </a>
-      </div>
+  <p class="mb-1">
+    Office 
+    <a href="tel:01248342517" class="text-main-light fw-bold text-decoration-none">
+      01248 342517
+    </a>
+  </p>
 
+  <p class="mb-1">
+    Manager 
+    <a href="tel:07930828575" class="text-main-light fw-bold text-decoration-none">
+      07930 828575
+    </a>
+  </p>
+
+  <p class="mb-1">
+    E <a href="mailto:info@homecarewales.com" class="text-main-light">info@homecarewales.com</a>
+  </p>
+
+  <p class="mb-0">
+    Parc Mount, Glanhwfa Road, Llangefni, LL77 7EY
+  </p>
+</div>
+      </div>
+        <!-- ───── SOCIAL LINKS ───── -->
+  <div class="social-links text-center mt-4">
+    <a
+      href="https://www.facebook.com/profile.php?id=100054523386407#"
+      class="text-main-light me-3"
+      target="_blank"
+      rel="noopener"
+      aria-label="Home Care Wales on Facebook"
+    >
+      <i class="bi bi-facebook fs-4"></i>
+    </a>
+    <a
+      href="https://g.page/home-care-wales" 
+      class="text-main-light"
+      target="_blank"
+      rel="noopener"
+      aria-label="Home Care Wales on Google Business Profile"
+    >
+      <i class="bi bi-google fs-4"></i>
+    </a>
+  </div>
+  <!-- ────────────────────────── -->
       <hr class="border-light my-4" />
       <p class="mb-2 small text-center">
   Home Care Wales is registered and inspected by 
@@ -173,9 +207,8 @@
   </a>
 </p>
       <p class="mb-0 small text-center">&copy; <span id="year"></span> Home Care Wales Ltd.</p>
-      <p class="mb-0 small text-center">
-        Website by <a href="https://www.cleandesignuk.com" class="text-main-light">Clean Design UK</a>
-      </p>
+      <p class="mb-0 small text-center">Website Design by <a href="https://www.cleandesignuk.com" class="text-main-light"> Clean Design UK</a></p>
+      
     </div>
   </footer>
 
